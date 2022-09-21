@@ -15,7 +15,6 @@ public class Cliente {
 	
 	public Cliente(int id, String nome, int cpf, int telefone, String rua, String numero, String complemento,
 			String bairro, String cidade, String estado) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
