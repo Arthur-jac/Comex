@@ -10,12 +10,13 @@ public class Cliente {
 	private String bairro;
 	private String cidade;
 	private String estado;
+	private static int sequence = 1;
 	
 	
 	
-	public Cliente(int id, String nome, int cpf, int telefone, String rua, String numero, String complemento,
+	public Cliente(String nome, int cpf, int telefone, String rua, String numero, String complemento,
 			String bairro, String cidade, String estado) {
-		this.id = id;
+		this.id = sequence++;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;

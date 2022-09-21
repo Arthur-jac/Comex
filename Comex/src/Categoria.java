@@ -3,17 +3,16 @@ public class Categoria {
 	private int id;
 	private String nome;
 	private String status;
+	private static int sequence = 1;
 	
 	public Categoria() {
+		this.id = sequence++;
 		this.status = "ATIVO";
 	}
 	
 	
 	public int getId() {
 		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getNome() {
 		return nome;

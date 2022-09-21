@@ -5,20 +5,17 @@ public class CriaCategoria {
 		
 		if (categoria == "informatica") {
 			Categoria c1 = new Categoria();
-			c1.setId(1);
 			c1.setNome("INFORMÁTICA");
 			
 			return c1;
 		}else if(categoria == "moveis") {
 			Categoria c2 = new Categoria();
-			c2.setId(2);
 			c2.setNome("MÓVEIS");
 			c2.setStatus("INATIVA");
 			
 			return c2;
 		}else if(categoria == "livros"){
 			Categoria c3 = new Categoria();		
-			c3.setId(3);
 			c3.setNome("LIVROS");
 	
 			return c3;

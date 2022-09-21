@@ -7,27 +7,23 @@ public class MainProduto {
 		
 		CriaCategoria cc = new CriaCategoria();
 		
-		ProdutoIsento pi = new ProdutoIsento();
-		
 		Produto p1 = new Produto();
 		
-		 //Produto p2 = new Produto();
+		//Produto p2 = new Produto();
+		ProdutoIsento pi = new ProdutoIsento();
 		
 		Produto p3 = new Produto();
 		
-		p1.setId(1);
 		p1.setNome("Notebook Samsung");
 		p1.setPreco_unitario(3523.00);
 		p1.setQtd_estoque(1);
 		p1.setCategoria(cc.criaCategoria("informatica"));
 		
-		pi.setId(2);
 		pi.setNome("Clean Architecture");
 		pi.setPreco_unitario(102.90);
 		pi.setQtd_estoque(2);
 		pi.setCategoria(cc.criaCategoria("livros"));
 		
-		p3.setId(3);
 		p3.setNome("Monitor Dell 27");
 		p3.setPreco_unitario(1889.00);
 		p3.setQtd_estoque(3);

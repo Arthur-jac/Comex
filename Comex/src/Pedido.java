@@ -3,9 +3,10 @@ public class Pedido {
 	private int id;
 	private String data;
 	private Cliente cliente;
+	private static int sequence = 1;
 	
-	public Pedido(int id, String data, Cliente cliente) {
-		this.id = id;
+	public Pedido(String data, Cliente cliente) {
+		this.id = sequence++;
 		this.data = data;
 		this.cliente = cliente;
 	}

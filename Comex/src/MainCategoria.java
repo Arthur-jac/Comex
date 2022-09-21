@@ -10,14 +10,11 @@ public class MainCategoria {
 		
 		Categoria c3 = new Categoria();
 		
-		c1.setId(1);
 		c1.setNome("INFORMÁTICA");
 		
-		c2.setId(2);
 		c2.setNome("MÓVEIS");
 		c2.setStatus("INATIVA");
 		
-		c3.setId(3);
 		c3.setNome("LIVROS");
 
 		objetos.add(c1);

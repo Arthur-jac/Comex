@@ -7,13 +7,14 @@ public class Produto {
 	private double preco_unitario;
 	private int qtd_estoque;
 	private Categoria categoria;
+	private static int sequence = 1;
 	
+	public Produto() {
+		this.id = sequence++;
+	}
 	
 	public int getId() {
 		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getNome() {
 		return nome;

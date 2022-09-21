@@ -9,7 +9,7 @@ public class MainItemPedido {
 		produto.setPreco_unitario(10);
 		produto.setNome("Chocolate");
 		
-		Pedido pedido = new Pedido(1, "21/09/2022", null);
+		Pedido pedido = new Pedido("21/09/2022", null);
 		
 		ItemPedido ip1 = new ItemPedido(pedido, produto, 11, 50, "QUANTIDADE");
 		
@@ -18,7 +18,7 @@ public class MainItemPedido {
 		produto2.setPreco_unitario(999.99);
 		produto2.setNome("Celular");
 		
-		Pedido pedido2 = new Pedido(3, "07/09/2022", null);
+		Pedido pedido2 = new Pedido("07/09/2022", null);
 		
 		ItemPedido ip2 = new ItemPedido(pedido2, produto2, 1, 100, "PROMOÇÃO");
 		
