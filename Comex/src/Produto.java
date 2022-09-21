@@ -62,7 +62,7 @@ public class Produto {
 				+ " Preço unitario -> " + NumberFormat.getCurrencyInstance().format(preco_unitario) + " \n"
 				+ " Quantidade no estoque -> " + qtd_estoque + " \n"
 				+ " Categoria -> " + categoria.getNome()+ " \n"
-				+ " Total estoque -> " + calculaValorTotalEstoque() + " \n"
+				+ " Valor Total estoque -> " + calculaValorTotalEstoque() + " \n"
 				+ " Imposto -> " + calculaImposto() + "\n \n";
 	}
 	

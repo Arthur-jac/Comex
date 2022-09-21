@@ -7,9 +7,11 @@ public class MainProduto {
 		
 		CriaCategoria cc = new CriaCategoria();
 		
+		ProdutoIsento pi = new ProdutoIsento();
+		
 		Produto p1 = new Produto();
 		
-		Produto p2 = new Produto();
+		 //Produto p2 = new Produto();
 		
 		Produto p3 = new Produto();
 		
@@ -19,11 +21,11 @@ public class MainProduto {
 		p1.setQtd_estoque(1);
 		p1.setCategoria(cc.criaCategoria("informatica"));
 		
-		p2.setId(2);
-		p2.setNome("Clean Architecture");
-		p2.setPreco_unitario(102.90);
-		p2.setQtd_estoque(2);
-		p2.setCategoria(cc.criaCategoria("livros"));
+		pi.setId(2);
+		pi.setNome("Clean Architecture");
+		pi.setPreco_unitario(102.90);
+		pi.setQtd_estoque(2);
+		pi.setCategoria(cc.criaCategoria("livros"));
 		
 		p3.setId(3);
 		p3.setNome("Monitor Dell 27");
@@ -32,7 +34,7 @@ public class MainProduto {
 		p3.setCategoria(cc.criaCategoria("informatica"));
 		
 		produtos.add(p1);
-		produtos.add(p2);
+		produtos.add(pi);
 		produtos.add(p3);
 		
 		System.out.println(produtos);
