@@ -6,6 +6,7 @@ public class Produto {
 	private String descricao;
 	private double preco_unitario;
 	private int qtd_estoque;
+	private int qtd_pegada;
 	private Categoria categoria;
 	private static int sequence = 1;
 	
@@ -40,6 +41,15 @@ public class Produto {
 	public void setQtd_estoque(int qtd_estoque) {
 		this.qtd_estoque = qtd_estoque;
 	}
+	
+	public int getQtd_pegada() {
+		return qtd_pegada;
+	}
+
+	public void setQtd_pegada(int qtd_pegada) {
+		this.qtd_pegada = qtd_pegada;
+	}
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -62,6 +72,7 @@ public class Produto {
 				+ " Descrição -> " + descricao + " \n"
 				+ " Preço unitario -> " + NumberFormat.getCurrencyInstance().format(preco_unitario) + " \n"
 				+ " Quantidade no estoque -> " + qtd_estoque + " \n"
+				+ " Quantidade obtida -> " + qtd_pegada + " \n"
 				+ " Categoria -> " + categoria.getNome()+ " \n"
 				+ " Valor Total estoque -> " + calculaValorTotalEstoque() + " \n"
 				+ " Imposto -> " + calculaImposto() + "\n \n";

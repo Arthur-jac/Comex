@@ -13,10 +13,10 @@ public class MainCategoria {
 		c1.setNome("INFORMÁTICA");
 		
 		c2.setNome("MÓVEIS");
-		c2.setStatus("INATIVA");
+		c2.setStatus(false);
 		
 		c3.setNome("LIVROS");
-
+	
 		objetos.add(c1);
 		objetos.add(c2);
 		objetos.add(c3);

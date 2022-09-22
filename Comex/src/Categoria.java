@@ -2,12 +2,12 @@
 public class Categoria {
 	private int id;
 	private String nome;
-	private String status;
+	private boolean status;
 	private static int sequence = 1;
 	
 	public Categoria() {
 		this.id = sequence++;
-		this.status = "ATIVO";
+		this.status = true;
 	}
 	
 	
@@ -20,10 +20,10 @@ public class Categoria {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 	

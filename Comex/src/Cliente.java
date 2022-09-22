@@ -65,7 +65,7 @@ public class Cliente {
 				+ " Nome -> " + nome + " \n"
 				+ " CPF -> " + cpf + " \n"
 				+ " Telefone -> " + telefone + " \n"
-				+ " Rua -> " + rua
+				+ " Rua -> " + rua + " \n"
 				+ " Numero ->" + numero + "\n"
 				+ " Complemento -> " + complemento + "\n"
 				+ " Bairro -> " + bairro + " \n"

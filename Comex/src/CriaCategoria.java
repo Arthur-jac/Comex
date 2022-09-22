@@ -11,7 +11,7 @@ public class CriaCategoria {
 		}else if(categoria == "moveis") {
 			Categoria c2 = new Categoria();
 			c2.setNome("MÓVEIS");
-			c2.setStatus("INATIVA");
+			c2.setStatus(false);
 			
 			return c2;
 		}else if(categoria == "livros"){
