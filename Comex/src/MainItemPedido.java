@@ -4,26 +4,28 @@ public class MainItemPedido {
 	public static void main(String[] args) {
 		ArrayList<Object> itens = new ArrayList<>();
 		
+		Categoria c1 = new Categoria();		
+		c1.setNome("INFORMÁTICA");
+
 		Produto produto = new Produto();
+		Cliente cliente = new Cliente("Ana", 123, 999, "Rua da Ana", "1111", "Sobrado 1", "Bairro da Ana", "Curitiba", "PR");
 		
-		produto.setPreco_unitario(10);
-		produto.setNome("Chocolate");
+		produto.setNome("Notebook Samsung");
+		produto.setPreco_unitario(3523.00);
+		produto.setQtd_estoque(1);
+		produto.setQtd_pegada(1);
+		produto.setCategoria(c1);
 		
-		Pedido pedido = new Pedido("21/09/2022", null);
+		Pedido pedido = new Pedido("21/09/2022", cliente);
 		
-		ItemPedido ip1 = new ItemPedido(pedido, produto, 11, 50, "QUANTIDADE");
+		// Testes para a promoção
+		ItemPedido item1 = new ItemPedido(pedido, produto, 2, 0, "NENHUM"); 
+		ItemPedido item2 = new ItemPedido(pedido, produto, 1, 50, "PROMOÇÃO");
+		ItemPedido item3 = new ItemPedido(pedido, produto, 11, 800, "QUANTIDADE");
 		
-		Produto produto2 = new Produto();
-		
-		produto2.setPreco_unitario(999.99);
-		produto2.setNome("Celular");
-		
-		Pedido pedido2 = new Pedido("07/09/2022", null);
-		
-		ItemPedido ip2 = new ItemPedido(pedido2, produto2, 1, 100, "PROMOÇÃO");
-		
-		itens.add(ip1);
-		itens.add(ip2);
+		itens.add(item1);
+		itens.add(item2);
+		itens.add(item3);
 		
 		System.out.println(itens);
 	}

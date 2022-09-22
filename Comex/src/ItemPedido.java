@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 
 public class ItemPedido {
 	private int id;
@@ -40,19 +41,6 @@ public class ItemPedido {
 	public String getTp_desconto() {
 		return tp_desconto;
 	}
-
-	@Override
-	public String toString() {
-		return "\n ItemPedido -> " + id + " \n"
-				+ " Produto Nome -> " + produto.getNome() + " \n"
-				+ " Produto preço unitario -> " + produto.getPreco_unitario() + " - " + pedido.getData() + " \n"
-				+ " Pedido -> " + pedido.getId() + " \n"
-				+ " Quantidade comprada -> " + qtd_comprada + " \n"
-				+ " Desconto -> " + desconto + " \n"
-				+ " Tipo Desconto -> " + tp_desconto + " \n"
-				+ " Preço Total sem Desconto -> " + precoTotalsemDesconto() + " \n"
-				+ " Preço Total com Desconto -> " + precoTotalcomDesconto() + " \n \n";
-	}
 	
 	public double precoTotalsemDesconto() {
 		return produto.getPreco_unitario() * getQtd_comprada();
@@ -63,11 +51,26 @@ public class ItemPedido {
 			return getDesconto() * 0.1;
 		if(getTp_desconto() == "PROMOÇÃO")
 			return getDesconto() * 0.2;
-		else
-			return 0;
+		return 0;
 	}
 	
 	public double precoTotalcomDesconto() {
+		if(getTp_desconto() == "NENHUM")
+			return 0;
 		return precoTotalsemDesconto() - calculaDesconto();
+	}
+	
+	@Override
+	public String toString() {
+		return "\n ItemPedido -> " + id + " \n"
+				+ " Produto Nome -> " + produto.getNome() + " \n"
+				+ " Produto preço unitario -> " + NumberFormat.getCurrencyInstance().format(produto.getPreco_unitario())
+				+ " - " + pedido.getData() + " \n"
+				+ " Pedido -> " + pedido.getId() + " \n"
+				+ " Quantidade comprada -> " + qtd_comprada + " \n"
+				+ " Desconto -> " + desconto + " \n"
+				+ " Tipo Desconto -> " + tp_desconto + " \n"
+				+ " Preço Total sem Desconto -> " + NumberFormat.getCurrencyInstance().format(precoTotalsemDesconto()) + " \n"
+				+ " Preço Total com Desconto -> " + NumberFormat.getCurrencyInstance().format(precoTotalcomDesconto()) + " \n \n";
 	}
 }
