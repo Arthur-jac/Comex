@@ -71,7 +71,6 @@ public class ItemPedido {
 				+ " - " + pedido.getData() + " \n"
 				+ " Pedido -> " + pedido.getId() + " \n"
 				+ " Quantidade comprada -> " + qtd_comprada + " \n"
-				+ " Desconto -> " + desconto + " \n"
 				+ " Tipo Desconto -> " + tp_desconto + " \n"
 				+ " Preço Total sem Desconto -> " + NumberFormat.getCurrencyInstance().format(precoTotalsemDesconto()) + " \n"
 				+ " Preço Total com Desconto -> " + NumberFormat.getCurrencyInstance().format(precoTotalcomDesconto()) + " \n \n";
