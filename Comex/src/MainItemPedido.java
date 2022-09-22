@@ -19,9 +19,9 @@ public class MainItemPedido {
 		Pedido pedido = new Pedido("21/09/2022", cliente);
 		
 		// Testes para a promoção
-		ItemPedido item1 = new ItemPedido(pedido, produto, 2, 0, "NENHUM"); 
-		ItemPedido item2 = new ItemPedido(pedido, produto, 1, 50, "PROMOÇÃO");
-		ItemPedido item3 = new ItemPedido(pedido, produto, 11, 800, "QUANTIDADE");
+		ItemPedido item1 = new ItemPedido(pedido, produto, 2, "NENHUM"); 
+		ItemPedido item2 = new ItemPedido(pedido, produto, 1,"PROMOÇÃO");
+		ItemPedido item3 = new ItemPedido(pedido, produto, 11, "QUANTIDADE");
 		
 		itens.add(item1);
 		itens.add(item2);

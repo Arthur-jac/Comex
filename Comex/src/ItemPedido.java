@@ -5,16 +5,15 @@ public class ItemPedido {
 	private Pedido pedido;
 	private Produto produto;
 	private int qtd_comprada;
-	private double desconto;
-	private String tp_desconto;
+	private double desconto = 0;
+	private String tp_desconto = "NENHUM";
 	private static int sequence = 1;
 	
-	public ItemPedido(Pedido pedido, Produto produto, int qtd_comprada, double desconto, String tp_desconto) {
+	public ItemPedido(Pedido pedido, Produto produto, int qtd_comprada, String tp_desconto) {
 		this.pedido = pedido;
 		this.produto = produto;
 		this.id = sequence++;
 		this.qtd_comprada = qtd_comprada;
-		this.desconto = desconto;
 		this.tp_desconto = tp_desconto;
 	}
 
@@ -47,10 +46,14 @@ public class ItemPedido {
 	}
 	
 	public double calculaDesconto() {
-		if(getTp_desconto() == "QUANTIDADE" && getQtd_comprada() >= 10) 
-			return getDesconto() * 0.1;
-		if(getTp_desconto() == "PROMOÇÃO")
-			return getDesconto() * 0.2;
+		if(getTp_desconto() == "QUANTIDADE" && getQtd_comprada() >= 10) {
+			this.desconto = 0.1;
+			return precoTotalsemDesconto() * getDesconto();
+		}
+		if(getTp_desconto() == "PROMOÇÃO") {
+			this.desconto = 0.2;
+			return precoTotalsemDesconto() * getDesconto();
+		}
 		return 0;
 	}
 	
