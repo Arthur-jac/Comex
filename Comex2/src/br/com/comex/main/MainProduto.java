@@ -1,3 +1,7 @@
+package br.com.comex.main;
+import br.com.comex.modelo.Categoria;
+import br.com.comex.modelo.Produto;
+import br.com.comex.modelo.Status;
 
 public class MainProduto {
 
