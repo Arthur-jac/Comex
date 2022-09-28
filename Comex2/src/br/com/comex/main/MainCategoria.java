@@ -6,16 +6,15 @@ public class MainCategoria {
 
 	public static void main(String[] args){
 		
-		Categoria categoria = new Categoria(null, Status.ATIVA);
+		Categoria categoria = new Categoria("Chocolate", Status.ATIVA);
 		
 		try {
-			if(categoria.getId() > 0) 
-				if(categoria.getNome().length() >= 3 && categoria.getNome() != null) {
+				if(categoria.getId() > 0 && categoria.getNome().length() >= 3 && categoria.getNome() != null) {
 					System.out.println(categoria);
 				}else {
 					throw new IllegalArgumentException("Categoria invalida");
 				}
-		}catch(NullPointerException | IllegalArgumentException ex) {
+		}catch(IllegalArgumentException ex) {
 			System.out.println(ex);
 		}finally {
 			System.out.println("Programa finalizado.");

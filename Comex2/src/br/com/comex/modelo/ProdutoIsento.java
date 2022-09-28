@@ -6,5 +6,12 @@ public class ProdutoIsento extends Produto{
 		super(nome, preco_unitario, qtd_estoque, categoria);
 		
 	}
+	
+	@Override
+	public double calculaImposto() {
+		double isento = super.calculaImposto();
+		isento = 0;
+		return isento;
+	}
 
 }
