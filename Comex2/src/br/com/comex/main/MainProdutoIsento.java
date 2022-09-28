@@ -13,7 +13,7 @@ public class MainProdutoIsento {
 		ProdutoIsento pi = new ProdutoIsento("Bolsa", 200, 5, categoria);
 		
 		if(pi.getId() > 0 &&
-				pi.getNome() != null && pi.getNome().length() > 0 && 
+				pi.getNome() != null && pi.getNome().length() >= 5 && 
 				pi.getPreco_unitario() > 0 && 
 				pi.getQtd_estoque() > 0 && 
 				pi.getCategoria() != null) {

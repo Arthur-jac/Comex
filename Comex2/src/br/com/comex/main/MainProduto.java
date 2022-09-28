@@ -11,7 +11,7 @@ public class MainProduto {
 		
 		try {
 			if(produto.getId() > 0 &&
-					produto.getNome() != null && produto.getNome().length() > 0 && 
+					produto.getNome() != null && produto.getNome().length() >= 5 && 
 					produto.getPreco_unitario() > 0 && 
 					produto.getQtd_estoque() > 0 && 
 					produto.getCategoria() != null) { 
