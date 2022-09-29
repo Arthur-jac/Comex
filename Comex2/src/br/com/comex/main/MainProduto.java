@@ -7,18 +7,20 @@ public class MainProduto {
 
 	public static void main(String[] args) {
 		Categoria categoria = new Categoria("Alimento", Status.ATIVA);
-		Produto produto = new Produto("Chocolate", 10, 2, categoria);
+		Produto produto = new Produto("Chocolate", 5, 2, categoria);
+		
+		// Problema no nome
+		//Produto produto2 = new Produto("3Chocolate", 5, 2, categoria);
+		
+		// Problema no estoque ou preço
+		//Produto produto2 = new Produto("Chocolate", 0, 0, categoria);
+		
+		// Problema na categoria
+		//Produto produto2 = new Produto("Chocolate", 5, 2, null);
+		
 		
 		try {
-			if(produto.getId() > 0 &&
-					produto.getNome() != null && produto.getNome().length() >= 5 && 
-					produto.getPreco_unitario() > 0 && 
-					produto.getQtd_estoque() > 0 && 
-					produto.getCategoria() != null) { 
-				System.out.println(produto);
-			}else {
-				throw new IllegalArgumentException("Produto invalido");
-			}
+			System.out.println(produto);
 		}catch(IllegalArgumentException ex) {
 			System.out.println(ex);
 		}finally {

@@ -7,15 +7,23 @@ public class Categoria {
 	private static int sequence = 1;
 		
 	public Categoria(String nome, Status status) {
-		this.id = sequence++;
-		this.nome = nome;
-		this.status = status;
+		
+		if(nome.length() < 3 || nome == null) {
+			throw new IllegalArgumentException("O nome não pode ser null ou ser menor que dois caracteres.");
+		}
 		
 		if(nome.startsWith("0") || nome.startsWith("1") || nome.startsWith("2") || nome.startsWith("3") || nome.startsWith("4") ||
 				nome.startsWith("5") || nome.startsWith("6") || nome.startsWith("7") || nome.startsWith("8") || nome.startsWith("9")) {
 			throw new IllegalArgumentException("O nome não pode começar com números");
 		}
 		
+		if(id < 0){
+			throw new IllegalArgumentException("O id deve ser maior que zero.");
+		}
+		
+		this.id = sequence++;
+		this.nome = nome;
+		this.status = status;
 	}
 
 	public int getId() {

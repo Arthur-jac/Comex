@@ -10,16 +10,14 @@ public class MainProdutoIsento {
 	public static void main(String[] args) {
 		Categoria categoria = new Categoria("Moda", Status.ATIVA);
 		
-		ProdutoIsento pi = new ProdutoIsento("Bolsa", 200, 5, categoria);
-		
-		if(pi.getId() > 0 &&
-				pi.getNome() != null && pi.getNome().length() >= 5 && 
-				pi.getPreco_unitario() > 0 && 
-				pi.getQtd_estoque() > 0 && 
-				pi.getCategoria() != null) {
+		ProdutoIsento pi = new ProdutoIsento("3Bolsa", 200, 5, categoria);
+
+		try {
 			System.out.println(pi);
-		}else {
-			throw new ComexException("Produto Isento incorreto");
+		}catch(IllegalArgumentException ex) {
+			System.out.println(ex);
+		}finally {
+			System.out.println("Programa encerrado.");
 		}
 
 	}

@@ -6,29 +6,27 @@ import br.com.comex.modelo.EstadoCliente;
 public class MainCliente {
 	public static void main(String[] args) {
 		
-		Cliente cliente = new Cliente("Arthur", "01234867871", "99999999999", "rua do arthur", "N12", null,"bairro do arthur"
+		Cliente cliente = new Cliente("Arthur", "01234867872", "99999999999", "rua do arthur", "N12", null,"bairro do arthur"
 				, "cidade do arhur", EstadoCliente.PR);
 		
+		// Problema no nome
+		//Cliente cliente2 = new Cliente("4Arthur", "01234867872", "99999999999", "rua do arthur", "N12", null,"bairro do arthur"
+		//		, "cidade do arhur", EstadoCliente.PR);
+		
+		// Problema no cpf
+		//Cliente cliente2 = new Cliente("Arthur", "A11234867872", "99999999999", "rua do arthur", "N12", null,"bairro do arthur"
+		//		, "cidade do arhur", EstadoCliente.PR);
+		
+		// Problema no telefone
+		//Cliente cliente2 = new Cliente("4Arthur", "01234867872", "A299999999999", "rua do arthur", "N12", null,"bairro do arthur"
+		//		, "cidade do arhur", EstadoCliente.PR);
+		
+		// Problema no endereço
+		//Cliente cliente2 = new Cliente("4Arthur", "01234867872", "99999999999", null, null, null,null
+		//		, null, EstadoCliente.PR);
+		
 		try {
-			if(cliente.getId() > 0 &&
-					cliente.getNome().length() >= 5 &&
-					cliente.getNome() != null &&
-					cliente.getCpf().length() == 14 &&
-					cliente.getCpf() != null &&
-					cliente.getTelefone().length() == 14 &&
-					cliente.getRua().length() > 5 &&
-					cliente.getRua() != null &&
-					cliente.getNumero().length() > 1 &&
-					cliente.getNumero() != null &&
-					cliente.getBairro().length() > 1 &&
-					cliente.getBairro() != null &&
-					cliente.getCidade() != null &&
-					cliente.getEstado() != null &&
-					cliente.getCidade().length() > 1) {
-				System.out.println(cliente);
-			}else {
-				throw new IllegalArgumentException("Cliente invalido");
-			}
+			System.out.println(cliente);
 		} catch (IllegalArgumentException ex) {
 			System.out.println(ex);
 		}finally {
