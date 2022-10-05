@@ -1,6 +1,7 @@
 package br.com.comex.csv;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LeitorPedidosCsv {
 	
@@ -11,6 +12,7 @@ public class LeitorPedidosCsv {
 	
 	public static void main(String[] args) {
 		ArrayList<PedidoCsv> pedidos = new ArrayList<PedidoCsv>();
+		int soma = 0;
 		
 		pedidos.add(cadastraPedido("MÓVEIS","Sofá 3 lugares","ANA","2500.00","1","05/01/2022"));
 		pedidos.add(cadastraPedido("INFORMÁTICA","Notebook Samsung","ANA","3523.00","1","01/01/2022"));
@@ -30,6 +32,12 @@ public class LeitorPedidosCsv {
 		pedidos.add(cadastraPedido("INFORMÁTICA","Galaxy Tab S8","BIA","5939.10","4","02/01/2022"));
 		
 		System.out.println("Total de pedidos -> " + pedidos.size());
+		
+		for (PedidoCsv p : pedidos) {
+			soma += Integer.parseInt(p.getQuantidade()); 
+		}
+		
+		System.out.println("Total de produtos vendidos -> " +soma);
 	}
 }
 
