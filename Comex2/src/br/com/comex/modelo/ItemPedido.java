@@ -1,0 +1,80 @@
+package br.com.comex.modelo;
+
+import java.text.NumberFormat;
+
+public class ItemPedido {
+	private int id;
+	private Pedido pedido;
+	private Produto produto;
+	private int qtd_comprada;
+	private double desconto = 0;
+	private String tp_desconto = "NENHUM";
+	private static int sequence = 1;
+	
+	public ItemPedido(Pedido pedido, Produto produto, int qtd_comprada, String tp_desconto) {
+		this.pedido = pedido;
+		this.produto = produto;
+		this.id = sequence++;
+		this.qtd_comprada = qtd_comprada;
+		this.tp_desconto = tp_desconto;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public int getQtd_comprada() {
+		return qtd_comprada;
+	}
+
+	public double getDesconto() {
+		return desconto;
+	}
+
+	public String getTp_desconto() {
+		return tp_desconto;
+	}
+	
+	public double precoTotalsemDesconto() {
+		return produto.getPreco_unitario() * getQtd_comprada();
+	}
+	
+	public double calculaDesconto() {
+		if(getTp_desconto() == "QUANTIDADE" && getQtd_comprada() >= 10) {
+			this.desconto = 0.1;
+			return precoTotalsemDesconto() * getDesconto();
+		}
+		if(getTp_desconto() == "PROMOÇÃO") {
+			this.desconto = 0.2;
+			return precoTotalsemDesconto() * getDesconto();
+		}
+		return 0;
+	}
+	
+	public double precoTotalcomDesconto() {
+		if(getTp_desconto() == "NENHUM")
+			return 0;
+		return precoTotalsemDesconto() - calculaDesconto();
+	}
+	
+	@Override
+	public String toString() {
+		return "\n ItemPedido -> " + id + " \n"
+				+ " Produto Nome -> " + produto.getNome() + " \n"
+				+ " Produto preço unitario -> " + NumberFormat.getCurrencyInstance().format(produto.getPreco_unitario())
+				+ " - " + pedido.getData() + " \n"
+				+ " Pedido -> " + pedido.getId() + " \n"
+				+ " Quantidade comprada -> " + qtd_comprada + " \n"
+				+ " Tipo Desconto -> " + tp_desconto + " \n"
+				+ " Preço Total sem Desconto -> " + NumberFormat.getCurrencyInstance().format(precoTotalsemDesconto()) + " \n"
+				+ " Preço Total com Desconto -> " + NumberFormat.getCurrencyInstance().format(precoTotalcomDesconto()) + " \n \n";
+	}
+}
