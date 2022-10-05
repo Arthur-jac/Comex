@@ -2,8 +2,6 @@ package br.com.comex.csv;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class TotalCategorias {
 	public static void main(String[] args) throws FileNotFoundException {
