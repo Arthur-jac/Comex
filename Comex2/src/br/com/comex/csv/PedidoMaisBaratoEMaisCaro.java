@@ -1,6 +1,7 @@
 package br.com.comex.csv;
 
 import java.io.FileNotFoundException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class PedidoMaisBaratoEMaisCaro {
@@ -9,30 +10,30 @@ public class PedidoMaisBaratoEMaisCaro {
 		LeitorPedidosCsv lpc = new LeitorPedidosCsv();
 		ArrayList<PedidoCsv> pedidos = lpc.lerCsv();
 		double total = 0;
-		double menor = 0;
-		double maior = 0;
-		String pMaior = "";
-		String pMenor = "";
+		double valorMenor = 0;
+		double valorMaior = 0;
+		String produtoMaior = "";
+		String produtoMenor = "";
 		
 		for (PedidoCsv p : pedidos) {
 			total = Integer.parseInt(p.getQuantidade()) * Double.parseDouble(p.getPreco());
-			menor = total;
-			if(maior < total) {
-				maior = total;
-				pMaior = p.getProduto();
+			valorMenor = total;
+			if(valorMaior < total) {
+				valorMaior = total;
+				produtoMaior = p.getProduto();
 			}
 		}
 		
 		for (PedidoCsv p : pedidos) {
 			total = Integer.parseInt(p.getQuantidade()) * Double.parseDouble(p.getPreco());
-			if(menor > total) {
-				menor = total;
-				pMenor = p.getProduto();
+			if(valorMenor > total) {
+				valorMenor = total;
+				produtoMenor = p.getProduto();
 			}
 		}
 		
-		System.out.println("Pedido mais barato -> " +menor + "("+pMenor+")");
-		System.out.println("Pedido mais caro -> " +maior + "("+pMaior+")");
+		System.out.println("Pedido mais barato -> " +NumberFormat.getCurrencyInstance().format(valorMenor) + "("+produtoMenor+")");
+		System.out.println("Pedido mais caro -> " +NumberFormat.getCurrencyInstance().format(valorMaior) + "("+produtoMaior+")");
 	}
 
 }

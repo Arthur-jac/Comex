@@ -1,6 +1,7 @@
 package br.com.comex.csv;
 
 import java.io.FileNotFoundException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class MontanteTotalVendas {
@@ -16,7 +17,7 @@ public class MontanteTotalVendas {
 			total += multi;
 		}
 		
-		System.out.println("Montante de vendas -> " + total);
+		System.out.println("Montante de vendas -> " +NumberFormat.getCurrencyInstance().format(total));
 
 	}
 
