@@ -24,6 +24,8 @@ public class MainListagemCategoria {
 			String status = rst.getString("STATUS");
 			System.out.println("ID -> " +id+ " \nNOME -> " +nome+ " \nSTATUS -> " +status+"\n \n");
 		}
+		
+		rst.close();
 		stm.close();
 		con.close();
 
