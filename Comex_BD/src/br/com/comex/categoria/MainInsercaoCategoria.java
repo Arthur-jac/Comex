@@ -1,4 +1,4 @@
-package br.com.comex.main;
+package br.com.comex.categoria;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,9 +14,15 @@ public class MainInsercaoCategoria {
 		
 		PreparedStatement stm = con.prepareStatement(comandoSql); 
 	
-		stm.setString(1, "INFORMÁTICA");
+//		stm.setString(1, "INFORMÁTICA");
+//		stm.setString(2, "ATIVA");
+//		
+//		stm.setString(1, "MÓVEIS");
+//		stm.setString(2, "INATIVA");
+//		
+		stm.setString(1, "LIVROS");
 		stm.setString(2, "ATIVA");
-		
+				
 		stm.execute();
 		stm.close();
 		con.close();

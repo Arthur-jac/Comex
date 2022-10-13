@@ -1,2 +1,8 @@
 1665673098812	Move compilation unit
 1665673500054	Move compilation unit
+1665686071723	Delete element
+1665686287612	Rename package 'br.com.comex.main'
+1665686540900	Rename package 'br.com.comex.main.cliente'
+1665686557594	Rename package 'br.com.comex.main.categoria'
+1665688750556	Rename method 'cadastrarCliente'
+1665688812527	Rename method 'listarClientes'
