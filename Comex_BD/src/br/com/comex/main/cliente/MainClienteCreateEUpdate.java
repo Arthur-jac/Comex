@@ -1,15 +1,13 @@
-package br.com.comex.main;
+package br.com.comex.main.cliente;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import br.com.comex.dao.ClienteDAO;
 import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.Cliente;
 
-public class MainCliente {
+public class MainClienteCreateEUpdate {
 
 	public static void main(String[] args) throws SQLException {
 		Connection con = new ConnectionFactory().getConnection();
@@ -28,21 +26,12 @@ public class MainCliente {
 		
 //		Cria um cliente
 //		cd.createCliente(c);
+				
+//		Atualiza o cliente
+		c.setComplemento("Sobrado 10");
+		cd.updateCliente(c,14);
 		
-// 		Deleta determinado cliente
-//		cd.deleteCliente(13);
-		
-//		Altera determinado cliente
-		c.setComplemento("Sobrado 8");
-//		cd.updateCliente(c,14);
-		
-// 		Lista todos os Clientes
-		List<Cliente> clientes = new ArrayList<Cliente>();
-		clientes = cd.listClientes();
-		
-		for (Cliente cliente : clientes) {
-			System.out.println(cliente);
-		}
+
 		
 		con.close();
 	}

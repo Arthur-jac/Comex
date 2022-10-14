@@ -54,3 +54,27 @@
 1665780161666	Delete element
 1665780164434	Delete element
 1665780167841	Delete element
+1665781966123	Move compilation unit
+1665781991849	Rename type 'MainCliente'
+1665782006373	Copy compilation unit
+1665782019541	Copy compilation unit
+1665782034981	Copy compilation unit
+1665782148009	Delete element
+1665782168799	Rename type 'MainClienteCreate'
+1665782339694	Move compilation unit
+1665782350456	Copy compilation unit
+1665782362451	Copy compilation unit
+1665782407787	Rename type 'MainCategoria'
+1665782532749	Move compilation unit
+1665782548137	Copy compilation unit
+1665782554822	Copy compilation unit
+1665782713636	Rename type 'MainProduto'
+1665782809470	Move compilation unit
+1665782845649	Copy compilation unit
+1665782852484	Copy compilation unit
+1665782861965	Rename type 'MainPedido'
+1665783014542	Rename package 'br.com.comex.main'
+1665783020169	Copy compilation unit
+1665783031153	Copy compilation unit
+1665783081492	Rename type 'MainItemPedido2'
+1665783098256	Rename type 'MainItemPedido'

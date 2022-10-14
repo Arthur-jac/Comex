@@ -1,4 +1,4 @@
-package br.com.comex.main;
+package br.com.comex.main.itemPedido;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,13 +9,12 @@ import br.com.comex.dao.ItemPedidoDAO;
 import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.ItemPedido;
 
-public class MainItemPedido {
+public class MainItemPedidoCreateEUpdate {
 	public static void main(String[] args) throws SQLException {
 		Connection con = new ConnectionFactory().getConnection();
 		
 		ItemPedidoDAO ipd = new ItemPedidoDAO(con);
 		
-//		Cria um item pedido
 		ItemPedido item = new ItemPedido();
 		item.setPreco_unitario(4499);
 		item.setQuantidade(1);
@@ -24,22 +23,13 @@ public class MainItemPedido {
 		item.setDesconto(0.0);
 		item.setTipo_desconto("NENHUM");
 		
-//		ipd.createItem(item);
+//		Cria um item pedido
+		ipd.createItem(item);
 		
-//		Deleta determinado item
-		ipd.deleteItem(9);
 		
 //		Altera determinado item
 //		item.setQuantidade(3);
-//		ipd.updateItem(item,9);
-		
-//		Lista todos os itens pedidos
-		List<ItemPedido> itens = new ArrayList<ItemPedido>();
-		itens = ipd.listItens();
-		
-		for (ItemPedido i : itens) {
-			System.out.println(i);
-		}
+//		ipd.updateItem(item,10);
 		
 		con.close();
 	}
