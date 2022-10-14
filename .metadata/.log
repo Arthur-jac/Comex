@@ -163,3 +163,9 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2022-10-14 17:30:22.312
+!MESSAGE The archive: D:/BRX-Capacitação/Level Up BRX - Semana 09/ojdbc8-21.7.0.0.jar which is referenced by the classpath, does not exist.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2022-10-14 17:30:31.806
+!MESSAGE The archive: D:/BRX-Capacitação/Level Up BRX - Semana 09/ojdbc8-21.7.0.0.jar which is referenced by the classpath, does not exist.
