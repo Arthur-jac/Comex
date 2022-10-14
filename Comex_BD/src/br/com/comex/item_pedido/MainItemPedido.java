@@ -5,10 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+import br.com.comex.jdbc.ConnectionFactory;
+
 public class MainItemPedido {
 
 	public static void main(String[] args) throws SQLException {
-		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","comex","comex");
+		Connection con = new ConnectionFactory().getConnection();
 		
 		CriarItem cp = new CriarItem();
 //		cp.createItem(con, 4999, 1, 11, 10, 0, "NENHUM");

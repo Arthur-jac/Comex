@@ -6,10 +6,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+import br.com.comex.jdbc.ConnectionFactory;
+
 public class MainPedido {
 
 	public static void main(String[] args) throws SQLException {
-		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","comex","comex");
+		Connection con = new ConnectionFactory().getConnection();
 		
 		CriarPedido cp = new CriarPedido();
 		cp.createPedido(con,Date.valueOf(LocalDate.now()),8);
