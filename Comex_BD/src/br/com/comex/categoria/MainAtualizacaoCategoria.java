@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class MainAtualizacaoCategoria {
 
 	public static void main(String[] args) throws SQLException {
-Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","comex","comex");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","comex","comex");
 		
 		String comandoSql = "UPDATE comex.categoria SET nome=? WHERE id=?";
 		
