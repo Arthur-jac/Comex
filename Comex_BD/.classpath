@@ -7,5 +7,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="D:/BRX-Capacitação/Level Up BRX - Semana 09/ojdbc8-21.7.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/BRX-Capacitação/Level Up BRX - Semana 09/PraticaTrello/Comex_BD/c3p0-0.9.5.4.jar"/>
+	<classpathentry kind="lib" path="D:/BRX-Capacitação/Level Up BRX - Semana 09/PraticaTrello/Comex_BD/mchange-commons-java-0.2.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
