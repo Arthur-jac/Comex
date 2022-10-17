@@ -12,16 +12,16 @@ public class MainCategoriaCreateEUpdate {
 		Connection con = new ConnectionFactory().getConnection();
 		CategoriaDAO cd = new CategoriaDAO(con);
 		
-		Categoria cat = new Categoria();
-		cat.setNome("Moda");
-		cat.setStatus("ATIVA");
+		Categoria categoria = new Categoria();
+		categoria.setNome("Teste");
+		categoria.setStatus("INATIVA");
 		
 //		Cria um cliente
-//		cd.createCategoria(c);
+//		cd.createCategoria(categoria);
 		
 //		Altera determinado categoria
-		cat.setStatus("ATIVA");
-		cd.updateCategoria(cat,16);
+		categoria.setNome("HIGIENE");
+		cd.updateCategoria(categoria,20);
 		
 		con.close();
 	}	

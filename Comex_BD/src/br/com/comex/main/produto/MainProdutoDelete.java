@@ -12,7 +12,7 @@ public class MainProdutoDelete {
 		Connection con = new ConnectionFactory().getConnection();	
 		ProdutoDAO pd = new ProdutoDAO(con);
 		
-		pd.deleteProduto(13);
+		pd.deleteProduto(14);
 
 		con.close();
 

@@ -15,12 +15,12 @@ public class MainProdutoCreateEUpdate {
 		
 
 		Produto produto = new Produto();
-		produto.setNome("Análise de dados com Python");
-		produto.setDescricao("Um livro que ensina o básico de análise de dados em python");
-		produto.setPreco_unitario(88);
-		produto.setQuantidade_estoque(10);
+		produto.setNome("Playstation 5");
+		produto.setDescricao("Console da ultima geração");
+		produto.setPreco_unitario(4700);
+		produto.setQuantidade_estoque(5);
 		produto.setTipo("NAO_ISENTO");
-		produto.setCategoria_id(11);
+		produto.setCategoria_id(12);
 		
 //		Cria um produto
 //		pd.createProduto(produto);
@@ -28,7 +28,7 @@ public class MainProdutoCreateEUpdate {
 		
 //		Altera determinado produto
 		produto.setPreco_unitario(4500);
-		pd.updateProduto(produto,11);
+		pd.updateProduto(produto,14);
 
 		con.close();
 

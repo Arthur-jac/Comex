@@ -12,7 +12,7 @@ public class MainClienteDelete {
 		Connection con = new ConnectionFactory().getConnection();
 		ClienteDAO cd = new ClienteDAO(con);
 
-		cd.deleteCliente(14);
+		cd.deleteCliente(15);
 		
 		con.close();
 	}

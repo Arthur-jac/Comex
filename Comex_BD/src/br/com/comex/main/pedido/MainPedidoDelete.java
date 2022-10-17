@@ -12,7 +12,7 @@ public class MainPedidoDelete {
 		Connection con = new ConnectionFactory().getConnection();		
 		PedidoDAO pd = new PedidoDAO(con);
 		
-		pd.deletePedido(11);
+		pd.deletePedido(13);
 		
 		con.close();
 

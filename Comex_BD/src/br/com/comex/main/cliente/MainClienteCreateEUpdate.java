@@ -13,23 +13,23 @@ public class MainClienteCreateEUpdate {
 		Connection con = new ConnectionFactory().getConnection();
 		ClienteDAO cd = new ClienteDAO(con);
 		
-		Cliente c = new Cliente();
-		c.setNome("Teste");
-		c.setCpf("222.222.222-22");
-		c.setTelefone("(41)88888-8888");
-		c.setRua("Rua A");
-		c.setNumero("7896");
-		c.setComplemento("Apt.07");
-		c.setBairro("Bairro A");
-		c.setCidade("Cidade");
-		c.setUf("PR");
+		Cliente cliente = new Cliente();
+		cliente.setNome("Teste");
+		cliente.setCpf("222.222.222-22");
+		cliente.setTelefone("(41)88888-8888");
+		cliente.setRua("Rua A");
+		cliente.setNumero("7896");
+		cliente.setComplemento("Apt.07");
+		cliente.setBairro("Bairro A");
+		cliente.setCidade("Cidade");
+		cliente.setUf("PR");
 		
 //		Cria um cliente
-//		cd.createCliente(c);
+//		cd.createCliente(cliente);
 				
 //		Atualiza o cliente
-		c.setComplemento("Sobrado 10");
-		cd.updateCliente(c,14);
+		cliente.setComplemento("Sobrado 10");
+		cd.updateCliente(cliente,15);
 		
 
 		

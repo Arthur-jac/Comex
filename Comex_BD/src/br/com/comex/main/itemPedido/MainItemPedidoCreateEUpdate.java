@@ -22,12 +22,12 @@ public class MainItemPedidoCreateEUpdate {
 		item.setTipo_desconto("NENHUM");
 		
 //		Cria um item pedido
-		ipd.createItem(item);
+//		ipd.createItem(item);
 		
 		
 //		Altera determinado item
-//		item.setQuantidade(3);
-//		ipd.updateItem(item,10);
+		item.setQuantidade(3);
+		ipd.updateItem(item,11);
 		
 		con.close();
 	}

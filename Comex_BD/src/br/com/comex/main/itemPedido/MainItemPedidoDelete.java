@@ -12,7 +12,7 @@ public class MainItemPedidoDelete {
 		
 		ItemPedidoDAO ipd = new ItemPedidoDAO(con);
 
-		ipd.deleteItem(10);
+		ipd.deleteItem(11);
 		
 		con.close();
 	}
