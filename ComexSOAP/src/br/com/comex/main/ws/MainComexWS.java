@@ -14,7 +14,6 @@ public class MainComexWS {
 		
 //		URL = http://localhost:8080/ComexWS?wsdl
 		System.out.println("Rodando na url: " + url);
-		comexWS.getCategorias();
 		Endpoint.publish(url, comexWS);
 	}
 

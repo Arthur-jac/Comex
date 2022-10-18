@@ -13,17 +13,14 @@ import br.com.comex.modelo.Categoria;
 
 @WebService
 public class ComexWS {
-	public void getCategorias() throws SQLException {
+	public List<Categoria> getCategorias() throws SQLException {
 		Connection con = new ConnectionFactory().getConnection();
 		CategoriaDAO cd = new CategoriaDAO(con);
 		
 		List<Categoria> categorias = new ArrayList<Categoria>();
 		categorias = cd.listCategoria();
-		
-		for (Categoria categoria : categorias) {
-			System.out.println(categoria);
-		}
-		
+
 		con.close();
+		return categorias;
 	}
 }
