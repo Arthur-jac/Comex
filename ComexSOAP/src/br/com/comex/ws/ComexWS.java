@@ -8,8 +8,10 @@ import java.util.List;
 import javax.jws.WebService;
 
 import br.com.comex.dao.CategoriaDAO;
+import br.com.comex.dao.ClienteDAO;
 import br.com.comex.jdbc.ConnectionFactory;
 import br.com.comex.modelo.Categoria;
+import br.com.comex.modelo.Cliente;
 
 @WebService
 public class ComexWS {
@@ -22,5 +24,17 @@ public class ComexWS {
 
 		con.close();
 		return categorias;
+	}
+	
+	public List<Cliente> getClientes() throws SQLException{
+		Connection con = new ConnectionFactory().getConnection();
+		ClienteDAO cd = new ClienteDAO(con);
+		
+		List<Cliente> clientes = new ArrayList<Cliente>();
+		clientes = cd.listClientes();
+		
+		con.close();
+		
+		return clientes;
 	}
 }
