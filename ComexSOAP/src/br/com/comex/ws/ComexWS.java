@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 
 import br.com.comex.dao.CategoriaDAO;
@@ -20,6 +22,7 @@ import br.com.comex.modelo.Produto;
 public class ComexWS {
 	
 	@WebMethod(operationName = "listarCategorias")
+	@WebResult(name="categoria")
 	public List<Categoria> getCategorias() throws SQLException {
 		Connection con = new ConnectionFactory().getConnection();
 		CategoriaDAO cd = new CategoriaDAO(con);
@@ -31,6 +34,7 @@ public class ComexWS {
 		return categorias;
 	}
 	
+	@WebResult(name="cliente")
 	public List<Cliente> getClientes() throws SQLException{
 		Connection con = new ConnectionFactory().getConnection();
 		ClienteDAO cd = new ClienteDAO(con);
@@ -43,6 +47,7 @@ public class ComexWS {
 		return clientes;
 	}
 	
+	@WebResult(name="produto")
 	public List<Produto> getProdutos() throws SQLException{
 		Connection con = new ConnectionFactory().getConnection();	
 		ProdutoDAO pd = new ProdutoDAO(con);
@@ -55,7 +60,7 @@ public class ComexWS {
 		return produtos;
 	}
 	
-	public Categoria adicionarCategoria(String nome) throws SQLException {
+	public Categoria adicionarCategoria(@WebParam(name = "nome")String nome) throws SQLException {
 		Connection con = new ConnectionFactory().getConnection();
 		CategoriaDAO cd = new CategoriaDAO(con);
 		Categoria categoria = new Categoria();
@@ -70,10 +75,29 @@ public class ComexWS {
 	}
 	
 	
-	public Cliente adicionarCliente(Cliente cliente) throws SQLException {
+	public Cliente adicionarCliente(
+			@WebParam(name = "nome")String nome, 
+			@WebParam(name = "cpf")String cpf,
+			@WebParam(name = "telefone")String telefone,
+			@WebParam(name = "rua")String rua,
+			@WebParam(name = "numero")String numero,
+			@WebParam(name = "complemento")String complemento,
+			@WebParam(name = "bairro")String bairro,
+			@WebParam(name = "cidade")String cidade,
+			@WebParam(name = "uf")String uf) throws SQLException {
 		Connection con = new ConnectionFactory().getConnection();
 		ClienteDAO cd = new ClienteDAO(con);
 		
+		Cliente cliente = new Cliente();
+		cliente.setNome(nome);
+		cliente.setCpf(cpf);
+		cliente.setTelefone(telefone);
+		cliente.setRua(rua);
+		cliente.setNumero(numero);
+		cliente.setComplemento(complemento);
+		cliente.setBairro(bairro);
+		cliente.setCidade(cidade);
+		cliente.setUf(uf);
 		cd.createCliente(cliente);
 		
 		con.close();

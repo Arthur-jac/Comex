@@ -19,10 +19,11 @@ public class ClienteDAO {
 	
 	public void createCliente(Cliente cliente) throws SQLException {
 		
+		String[] colunaParaRetornar = { "id" };
 		String comandoSql = "INSERT INTO comex.cliente (NOME,CPF,TELEFONE,RUA,NUMERO,COMPLEMENTO,BAIRRO,CIDADE,UF) VALUES(?,?,?,?,?,?,?,?,?)";
 		
-		PreparedStatement stm = con.prepareStatement(comandoSql);
-		
+		PreparedStatement stm = con.prepareStatement(comandoSql, colunaParaRetornar);
+
 		stm.setString(1,cliente.getNome());
 		stm.setString(2,cliente.getCpf());
 		stm.setString(3,cliente.getTelefone());
@@ -34,6 +35,10 @@ public class ClienteDAO {
 		stm.setString(9,cliente.getUf());
 		
 		stm.execute();
+		
+	    ResultSet rs = stm.getGeneratedKeys();
+	    rs.next();
+	    cliente.setId(rs.getInt(1));
 		stm.close();
 	}
 	

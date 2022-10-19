@@ -17,14 +17,20 @@ public class CategoriaDAO {
 	}
 	
 	public void createCategoria(Categoria categoria) throws SQLException {
+		String[] colunaParaRetornar = { "id" };
+		
 		String comandoSql = "INSERT INTO comex.categoria (nome,status) VALUES (?,?)";
 		
-		PreparedStatement stm = con.prepareStatement(comandoSql); 
+		PreparedStatement stm = con.prepareStatement(comandoSql, colunaParaRetornar); 
 		
 		stm.setString(1, categoria.getNome());
 		stm.setString(2, categoria.getStatus());
 				
 		stm.execute();
+		
+	    ResultSet rs = stm.getGeneratedKeys();
+	    rs.next();
+	    categoria.setId(rs.getInt(1));
 		stm.close();
 	}
 	
