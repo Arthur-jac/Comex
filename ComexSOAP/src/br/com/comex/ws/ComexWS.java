@@ -51,4 +51,18 @@ public class ComexWS {
 		
 		return produtos;
 	}
+	
+	public Categoria adicionarCategoria(String nome) throws SQLException {
+		Connection con = new ConnectionFactory().getConnection();
+		CategoriaDAO cd = new CategoriaDAO(con);
+		Categoria categoria = new Categoria();
+		
+		categoria.setNome(nome);
+		categoria.setStatus("ATIVA");
+		
+		cd.createCategoria(categoria);
+		
+		con.close();
+		return categoria;
+	}
 }
