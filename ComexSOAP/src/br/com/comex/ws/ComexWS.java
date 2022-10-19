@@ -65,4 +65,16 @@ public class ComexWS {
 		con.close();
 		return categoria;
 	}
+	
+	
+	public Cliente adicionarCliente(Cliente cliente) throws SQLException {
+		Connection con = new ConnectionFactory().getConnection();
+		ClienteDAO cd = new ClienteDAO(con);
+		
+		cd.createCliente(cliente);
+		
+		con.close();
+		
+		return cliente;
+	}
 }
