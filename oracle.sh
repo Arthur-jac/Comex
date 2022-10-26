@@ -1,0 +1,1 @@
+docker run -d --name oraclebd -p 2020:1521 -e ORACLE_PASSWORD=admin gvenzl/oracle-xe
